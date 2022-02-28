@@ -50,21 +50,12 @@
         tools:layout_editor_absoluteX="84dp"
         tools:layout_editor_absoluteY="262dp" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="360dp"
-        android:layout_height="80dp"
-        android:background="@drawable/button_border"
-        android:drawableLeft="@drawable/ic_camera"
-        android:gravity="center"
-        android:text="Thêm hình ảnh"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:backgroundTint="#FFFFFF"
-        app:backgroundTintMode="src_in"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="337dp" />
+    <include
+        layout="@layout/add_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="84dp"
+        tools:layout_editor_absoluteY="356dp" />
 
     <TextView
         android:id="@+id/textView5"

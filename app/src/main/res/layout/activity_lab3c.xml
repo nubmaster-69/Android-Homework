@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Lab3c"
+    android:id="@+id/parentLayout">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/phone_blue"
+        android:id="@+id/productImg"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/productInfoLayout"
+        android:layout_below="@+id/productImg"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Điện Thoại Vsmart Joy 3 - Hàng chính hãng"
+            android:textColor="#000"
+            android:textSize="18dp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/productName"/>
+
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="0.5"
+            android:scaleX=".7"
+            android:scaleY=".7"
+            android:layout_marginTop="10dp"
+            android:progressBackgroundTint="#E0E41A"
+            android:layout_below="@+id/productName"
+            android:id="@+id/rate"
+            android:progress="#f1c40f" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(Xem 828 đánh giá)"
+            android:textSize="18dp"
+            android:layout_marginTop="22dp"
+            android:layout_toRightOf="@+id/rate"
+            android:layout_below="@+id/productName"
+            android:id="@+id/review"
+            android:textColor="#000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rate"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="40dp"
+            android:text="1.790.000 đ"
+            android:textColor="#000"
+            android:id="@+id/price"
+            android:textStyle="bold"
+            android:textSize="22dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rate"
+            android:layout_marginTop="5dp"
+            android:text="1.790.000 đ"
+            android:layout_toRightOf="@+id/price"
+            android:textColor="#808080"
+            android:layout_marginLeft="85dp"
+            android:background="@drawable/line_through"
+            android:textStyle="bold"
+            android:textSize="22dp"/>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ở ĐÂU RẺ HƠN HOÀN TIỀN"
+        android:layout_below="@+id/productInfoLayout"
+        android:layout_marginTop="20dp"
+        android:textColor="#FA0000"
+        android:textStyle="bold"
+        android:textSize="14dp"
+        android:layout_marginLeft="40dp"
+        android:id="@+id/slogan"/>
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@mipmap/question"
+        android:layout_below="@id/productInfoLayout"
+        android:layout_toRightOf="@+id/slogan"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:id="@+id/pickColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="4 MÀU-CHỌN MÀU"
+        android:layout_below="@id/slogan"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="30dp"
+        android:background="@drawable/border"
+        android:gravity="center_horizontal"
+        android:padding="6dp"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:drawableRight="@mipmap/vector" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:text="chọn mua"
+        android:backgroundTint="#EE0A0A"
+        android:layout_below="@+id/pickColor"
+        android:layout_marginTop="30dp"
+        android:textSize="20dp"/>
+</RelativeLayout>
