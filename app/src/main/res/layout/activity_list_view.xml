@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ListViewActivity"
+    android:layout_gravity="center"
+    android:id="@+id/parent"
+    android:layout_centerInParent="true">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#1BA9FF"/>
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/ic_arrow_left" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/view"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="182dp"
+        android:layout_marginBottom="27dp"
+        android:text="Chat"
+        android:textColor="#fff"
+        android:textSize="30dp" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="9dp"
+        android:src="@drawable/ic_cart" />
+
+    <TextView
+        android:id="@+id/txtAds"
+        android:layout_width="356dp"
+        android:layout_height="54dp"
+        android:layout_below="@+id/view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:gravity="center|start"
+        android:text="Bạn có thắc mắc với sản phẩm vừa xem đừng ngại chát với shop!"
+        android:textSize="20dp" />
+
+    <ListView
+        android:id="@+id/myListView"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_below="@+id/txtAds"
+        android:layout_marginTop="19dp" />
+
+
+</RelativeLayout>
