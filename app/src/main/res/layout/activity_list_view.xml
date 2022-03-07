@@ -12,13 +12,14 @@
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="70dp"
         android:background="#1BA9FF"/>
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
         android:src="@drawable/ic_arrow_left" />
 
     <TextView
@@ -29,16 +30,18 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/view"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="182dp"
-        android:layout_marginBottom="27dp"
+        android:layout_marginEnd="180dp"
+        android:layout_marginBottom="20dp"
         android:text="Chat"
+        android:layout_marginTop="15dp"
         android:textColor="#fff"
         android:textSize="30dp" />
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_height="50dp"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="9dp"
         android:src="@drawable/ic_cart" />
@@ -49,7 +52,7 @@
         android:layout_height="54dp"
         android:layout_below="@+id/view"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="27dp"
+        android:layout_marginTop="20dp"
         android:gravity="center|start"
         android:text="Bạn có thắc mắc với sản phẩm vừa xem đừng ngại chát với shop!"
         android:textSize="20dp" />
