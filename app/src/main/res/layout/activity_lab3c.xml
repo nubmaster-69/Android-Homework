@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Lab3c"
+    tools:context="lab3.Lab3c"
     android:id="@+id/parentLayout">
 
     <ImageView

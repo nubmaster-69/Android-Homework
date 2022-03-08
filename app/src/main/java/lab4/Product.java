@@ -1,4 +1,4 @@
-package com.hisu.myapplication;
+package lab4;
 
 public class Product {
     private int imgUrl;

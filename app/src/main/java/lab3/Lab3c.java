@@ -1,8 +1,10 @@
-package com.hisu.myapplication;
+package lab3;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.hisu.myapplication.R;
 
 public class Lab3c extends AppCompatActivity {
 

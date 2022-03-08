@@ -1,4 +1,4 @@
-package com.hisu.myapplication;
+package lab4;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.hisu.myapplication.R;
 
 import java.util.ArrayList;
 
@@ -32,6 +34,7 @@ public class ListViewProductAdapter extends BaseAdapter {
 
     public void setProducts(ArrayList<Product> products) {
         this.products = products;
+        notifyDataSetChanged();
     }
 
     @Override
