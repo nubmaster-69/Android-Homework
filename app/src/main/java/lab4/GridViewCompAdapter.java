@@ -60,7 +60,7 @@ public class GridViewCompAdapter extends BaseAdapter {
         rate.setRating((float)components.get(i).getRate());
         revs.setText(String.format("(%d)", components.get(i).getRateAmount()));
         price.setText(String.format("%s đ", components.get(i).getPrice()));
-        dis.setText(components.get(i).getDiscount() + "%");
+        dis.setText("-" + components.get(i).getDiscount() + "%");
 
         return view;
     }

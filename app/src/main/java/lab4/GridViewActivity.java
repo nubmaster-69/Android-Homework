@@ -25,9 +25,9 @@ public class GridViewActivity extends AppCompatActivity {
 
         //int imgUrl, String name, double rate, int rateAmount, double price, double discount
         ArrayList<Component> comps = new ArrayList<>();
-        comps.add(new Component(R.mipmap.book, "Product name 1 Product name 1", 4.5, 15, "69.200", 35));
-        comps.add(new Component(R.mipmap.do_choi_dang_mo_hinh, "Product name 2", 5, 15, "69.200", 35));
-        comps.add(new Component(R.mipmap.phone_blue, "Product name 3", 1, 15, "69.200", 35));
+        comps.add(new Component(R.mipmap.dauchuyendoi, "Cáp chuyển từ Cổng USB sang PS2...", 4, 15, "69.900", 39));
+        comps.add(new Component(R.mipmap.carbusbtops2, "Cáp chuyển từ Cổng USB sang PS2...", 4.5, 11, "69.200", 35));
+        comps.add(new Component(R.mipmap.phone_blue, "Product name 3", 4.5, 35, "30.000.000", 12));
 
         GridViewCompAdapter adapter = new GridViewCompAdapter(this, R.layout.custom_gridview_item, comps);
         gridView.setAdapter(adapter);

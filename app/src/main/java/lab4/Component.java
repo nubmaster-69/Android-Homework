@@ -8,9 +8,9 @@ public class Component implements Serializable {
     private double rate;
     private int rateAmount;
     private String price;
-    private double discount;
+    private int discount;
 
-    public Component(int imgUrl, String name, double rate, int rateAmount, String price, double discount) {
+    public Component(int imgUrl, String name, double rate, int rateAmount, String price, int discount) {
         this.imgUrl = imgUrl;
         this.name = name;
         this.rate = rate;
@@ -59,11 +59,11 @@ public class Component implements Serializable {
         this.price = price;
     }
 
-    public double getDiscount() {
+    public int getDiscount() {
         return discount;
     }
 
-    public void setDiscount(double discount) {
+    public void setDiscount(int discount) {
         this.discount = discount;
     }
 }
