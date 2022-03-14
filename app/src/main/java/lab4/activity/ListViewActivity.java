@@ -1,4 +1,4 @@
-package lab4;
+package lab4.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,9 @@ import android.widget.ListView;
 import com.hisu.myapplication.R;
 
 import java.util.ArrayList;
+
+import lab4.adapter.ListViewProductAdapter;
+import lab4.model.Product;
 
 public class ListViewActivity extends AppCompatActivity {
 

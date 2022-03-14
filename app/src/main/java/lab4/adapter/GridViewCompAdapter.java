@@ -1,4 +1,4 @@
-package lab4;
+package lab4.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,7 +12,8 @@ import android.widget.TextView;
 import com.hisu.myapplication.R;
 
 import java.util.ArrayList;
-import java.util.List;
+
+import lab4.model.Component;
 
 public class GridViewCompAdapter extends BaseAdapter {
 

@@ -10,8 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
+        <activity android:name="lab5.activity.DonutDetailActivity"></activity>
         <activity
-            android:name="lab4.GridViewActivity"
+            android:name="lab5.activity.DonutActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,4 +1,4 @@
-package lab4;
+package lab4.model;
 
 public class Product {
     private int imgUrl;
