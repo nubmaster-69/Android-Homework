@@ -1,6 +1,8 @@
 package lab5.model;
 
-public class Donut {
+import java.io.Serializable;
+
+public class Donut implements Serializable {
 
     private int imageResource;
     private String name;

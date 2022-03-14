@@ -1,6 +1,7 @@
 package lab5.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ import com.hisu.myapplication.R;
 import java.text.DecimalFormat;
 import java.util.List;
 
+import lab5.activity.DonutDetailActivity;
 import lab5.model.Donut;
 
 public class RecycleViewDonutAdapter extends RecyclerView.Adapter<RecycleViewDonutAdapter.ViewHolder> {
@@ -60,7 +62,14 @@ public class RecycleViewDonutAdapter extends RecyclerView.Adapter<RecycleViewDon
         holder.txtDonutPrice.setText("$" + new DecimalFormat("#0.00").format(donut.getPrice()));
 
         holder.btnAdd.setOnClickListener(view -> {
-            Toast.makeText(context, donut.getName(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, donut.getName() + " added to Cart!", Toast.LENGTH_SHORT).show();
+        });
+
+        holder.parent.setOnClickListener(view -> {
+            Intent intent = new Intent(context, DonutDetailActivity.class);
+
+            intent.putExtra("donut", donut);
+            context.startActivity(intent);
         });
     }
 
@@ -88,5 +97,4 @@ public class RecycleViewDonutAdapter extends RecyclerView.Adapter<RecycleViewDon
             txtDonutPrice = itemView.findViewById(R.id.donut_price);
         }
     }
-
 }
