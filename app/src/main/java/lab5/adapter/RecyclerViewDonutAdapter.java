@@ -21,16 +21,16 @@ import java.util.List;
 import lab5.activity.DonutDetailActivity;
 import lab5.model.Donut;
 
-public class RecycleViewDonutAdapter extends RecyclerView.Adapter<RecycleViewDonutAdapter.ViewHolder> {
+public class RecyclerViewDonutAdapter extends RecyclerView.Adapter<RecyclerViewDonutAdapter.ViewHolder> {
 
     private List<Donut> donuts;
     private Context context;
 
-    public RecycleViewDonutAdapter(Context context) {
+    public RecyclerViewDonutAdapter(Context context) {
         this.context = context;
     }
 
-    public RecycleViewDonutAdapter(List<Donut> donuts, Context context) {
+    public RecyclerViewDonutAdapter(List<Donut> donuts, Context context) {
         this.donuts = donuts;
         this.context = context;
     }
@@ -53,7 +53,7 @@ public class RecycleViewDonutAdapter extends RecyclerView.Adapter<RecycleViewDon
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecycleViewDonutAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerViewDonutAdapter.ViewHolder holder, int position) {
         Donut donut = donuts.get(position);
 
         holder.donutImg.setImageResource(donut.getImageResource());
