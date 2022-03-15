@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/productInfoLayout"
         android:layout_below="@+id/productImg"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="5dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -30,75 +30,86 @@
             android:id="@+id/productName"/>
 
         <RatingBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:numStars="5"
-            android:stepSize="0.5"
-            android:scaleX=".7"
-            android:scaleY=".7"
-            android:layout_marginTop="10dp"
-            android:progressBackgroundTint="#808080"
-            android:layout_below="@+id/productName"
             android:id="@+id/rate"
-            android:progressTint="#E0E41A" />
-
-        <TextView
+            style="@android:style/Widget.DeviceDefault.RatingBar.Indicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="(Xem 828 đánh giá)"
-            android:textSize="18dp"
-            android:layout_marginTop="22dp"
-            android:layout_toRightOf="@+id/rate"
             android:layout_below="@+id/productName"
-            android:id="@+id/review"
-            android:textColor="#000"/>
+            android:layout_alignStart="@+id/productName"
+            android:layout_marginStart="-10dp"
+            android:layout_marginTop="16dp"
+            android:numStars="5"
+            android:rating="4.5"
+            android:isIndicator="false"
+            android:progressBackgroundTint="#95a5a6"
+            android:progressTint="#f1c40f"
+            android:scaleX="1"
+            android:scaleY="1"
+            android:stepSize="0.5" />
 
         <TextView
+            android:id="@+id/review"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/productName"
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="25dp"
+            android:layout_toRightOf="@+id/rate"
+            android:text="(Xem 828 đánh giá)"
+            android:textColor="#000"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/rate"
-            android:layout_marginTop="5dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="30dp"
             android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
             android:text="1.790.000 đ"
             android:textColor="#000"
-            android:id="@+id/price"
-            android:textStyle="bold"
-            android:textSize="22dp"/>
+            android:textSize="22dp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/rate"
-            android:layout_marginTop="5dp"
-            android:text="1.790.000 đ"
-            android:layout_toRightOf="@+id/price"
-            android:textColor="#808080"
-            android:layout_marginLeft="85dp"
+
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="31dp"
             android:background="@drawable/line_through"
-            android:textStyle="bold"
-            android:textSize="22dp"/>
+            android:text="1.790.000 đ"
+            android:textColor="#808080"
+            android:textSize="22dp"
+            android:textStyle="bold" />
     </RelativeLayout>
 
     <TextView
+        android:id="@+id/slogan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ở ĐÂU RẺ HƠN HOÀN TIỀN"
         android:layout_below="@+id/productInfoLayout"
-        android:layout_marginTop="20dp"
-        android:textColor="#FA0000"
-        android:textStyle="bold"
-        android:textSize="14dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
         android:layout_marginLeft="40dp"
-        android:id="@+id/slogan"/>
+        android:layout_marginTop="27dp"
+        android:text="Ở ĐÂU RẺ HƠN HOÀN TIỀN"
+        android:textColor="#FA0000"
+        android:textSize="14dp"
+        android:textStyle="bold" />
 
     <ImageView
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:src="@mipmap/question"
         android:layout_below="@id/productInfoLayout"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="26dp"
         android:layout_toRightOf="@+id/slogan"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"/>
+        android:src="@mipmap/question" />
 
     <TextView
         android:id="@+id/pickColor"
@@ -106,7 +117,7 @@
         android:layout_height="wrap_content"
         android:text="4 MÀU-CHỌN MÀU"
         android:layout_below="@id/slogan"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="25dp"
         android:layout_marginHorizontal="30dp"
         android:background="@drawable/border"
         android:gravity="center_horizontal"
@@ -117,12 +128,13 @@
         android:drawableRight="@mipmap/vector" />
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
-        android:text="chọn mua"
-        android:backgroundTint="#EE0A0A"
         android:layout_below="@+id/pickColor"
-        android:layout_marginTop="30dp"
-        android:textSize="20dp"/>
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="30dp"
+        android:backgroundTint="#EE0A0A"
+        android:text="chọn mua"
+        android:textSize="20dp" />
 </RelativeLayout>
