@@ -1,0 +1,75 @@
+package lab6.adapter;
+
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.hisu.myapplication.R;
+
+import java.util.List;
+
+import lab6.ShoeActivity;
+import lab6.ShoeDetailActivity;
+import lab6.fragment.ShoeDetailFragment;
+import lab6.model.Shoe;
+
+public class ShoeAdapter extends RecyclerView.Adapter<ShoeAdapter.ShoeViewHolder> {
+
+    private List<Shoe> shoes;
+    private Context context;
+
+    public ShoeAdapter(List<Shoe> shoes, Context context) {
+        this.shoes = shoes;
+        this.context = context;
+    }
+
+    @NonNull
+    @Override
+    public ShoeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_shoe_item, parent,false);
+        return new ShoeViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull ShoeAdapter.ShoeViewHolder holder, int position) {
+        Shoe shoe = shoes.get(position);
+
+        holder.shoeImg.setImageResource(shoe.getImageResource());
+        holder.txtName.setText(shoe.getBrand() + "-discount " + shoe.getDiscount() +"%");
+
+        holder.parent.setOnClickListener(view -> {
+            Intent intent = new Intent(context, ShoeDetailActivity.class);
+            intent.putExtra(ShoeDetailFragment.SHOE_DATA_KEY, shoe);
+            context.startActivity(intent);
+        });
+    }
+
+    @Override
+    public int getItemCount() {
+        return shoes.size();
+    }
+
+    public class ShoeViewHolder extends RecyclerView.ViewHolder {
+
+        private CardView parent;
+        private ImageView shoeImg;
+        private TextView txtName;
+
+        public ShoeViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+            parent = itemView.findViewById(R.id.shoe_parent);
+            shoeImg = itemView.findViewById(R.id.shoe_img);
+            txtName = itemView.findViewById(R.id.shoe_name);
+        }
+    }
+}

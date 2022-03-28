@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:background="#efefef">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@color/white"
+        android:paddingVertical="20dp"
+        android:id="@+id/txtTiki">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bạn có phiếu quà tặng Tiki/Got it/ Urbox?"
+            android:textColor="#000"
+            android:layout_marginLeft="16dp"
+            android:textSize="14dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nhập tại đây?"
+            android:textColor="#0A5EB7"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/subTotal"
+        android:background="@color/white"
+        android:paddingVertical="20dp"
+        android:layout_below="@+id/txtTiki"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tạm tính"
+            android:textColor="#000"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="141.800 đ"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="#EE0D0D"
+            android:layout_marginLeft="200dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

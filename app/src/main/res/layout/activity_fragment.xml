@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="lab6.FragmentActivity"
+    android:background="#efefef">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_above"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"/>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_middle"
+        android:layout_below="@+id/fragment_above"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"/>
+
+    <RelativeLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/fragment_middle"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/total"
+            android:layout_marginTop="50dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thành tiền"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="141.800 đ"
+                android:textColor="#EE0D0D"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="175dp"/>
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#E53935"
+            android:text="TIẾN HÀNH ĐẶT HÀNG"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@+id/total"/>
+    </RelativeLayout>
+
+</RelativeLayout>
