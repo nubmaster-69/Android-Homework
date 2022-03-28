@@ -2,12 +2,14 @@ package lab6.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -16,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.hisu.myapplication.R;
 
 import java.util.List;
+import java.util.zip.Inflater;
 
 import lab6.ShoeActivity;
 import lab6.ShoeDetailActivity;
@@ -35,7 +38,7 @@ public class ShoeAdapter extends RecyclerView.Adapter<ShoeAdapter.ShoeViewHolder
     @NonNull
     @Override
     public ShoeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_shoe_item, parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_shoe_item, parent, false);
         return new ShoeViewHolder(view);
     }
 
@@ -44,13 +47,23 @@ public class ShoeAdapter extends RecyclerView.Adapter<ShoeAdapter.ShoeViewHolder
         Shoe shoe = shoes.get(position);
 
         holder.shoeImg.setImageResource(shoe.getImageResource());
-        holder.txtName.setText(shoe.getBrand() + "-discount " + shoe.getDiscount() +"%");
+        holder.txtName.setText(shoe.getBrand() + "-discount " + shoe.getDiscount() + "%");
 
         holder.parent.setOnClickListener(view -> {
             Intent intent = new Intent(context, ShoeDetailActivity.class);
             intent.putExtra(ShoeDetailFragment.SHOE_DATA_KEY, shoe);
             context.startActivity(intent);
         });
+
+        int Orientation = context.getResources().getConfiguration().orientation;
+        if (Orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            holder.parent.setOnClickListener(v -> {
+                Intent intent = new Intent(context, ShoeActivity.class);
+                intent.putExtra(ShoeDetailFragment.SHOE_DATA_KEY, shoe);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+            });
+        }
     }
 
     @Override

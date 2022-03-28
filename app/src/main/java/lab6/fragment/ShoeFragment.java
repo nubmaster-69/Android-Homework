@@ -18,7 +18,7 @@ import lab6.model.Shoe;
 
 public class ShoeFragment extends Fragment {
 
-    private RecyclerView mRecyclerView;
+    public RecyclerView mRecyclerView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
