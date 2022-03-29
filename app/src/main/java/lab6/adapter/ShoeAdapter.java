@@ -3,6 +3,7 @@ package lab6.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.hisu.myapplication.R;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.zip.Inflater;
 
@@ -28,6 +30,7 @@ import lab6.model.Shoe;
 public class ShoeAdapter extends RecyclerView.Adapter<ShoeAdapter.ShoeViewHolder> {
 
     private List<Shoe> shoes;
+    private List<CardView> cardViewList;
     private Context context;
     private ShoeActivity shoeActivity;
 
@@ -35,6 +38,7 @@ public class ShoeAdapter extends RecyclerView.Adapter<ShoeAdapter.ShoeViewHolder
         this.shoes = shoes;
         this.context = context;
         shoeActivity = (ShoeActivity) context;
+        cardViewList = new ArrayList<>();
     }
 
     @NonNull
@@ -48,6 +52,8 @@ public class ShoeAdapter extends RecyclerView.Adapter<ShoeAdapter.ShoeViewHolder
     public void onBindViewHolder(@NonNull ShoeAdapter.ShoeViewHolder holder, int position) {
         Shoe shoe = shoes.get(position);
 
+        cardViewList.add(holder.parent);
+
         holder.shoeImg.setImageResource(shoe.getImageResource());
         holder.txtName.setText(shoe.getBrand() + "-discount " + shoe.getDiscount() + "%");
 
@@ -60,7 +66,11 @@ public class ShoeAdapter extends RecyclerView.Adapter<ShoeAdapter.ShoeViewHolder
         int Orientation = context.getResources().getConfiguration().orientation;
         if (Orientation == Configuration.ORIENTATION_LANDSCAPE) {
             holder.parent.setOnClickListener(v -> {
+                for (CardView cardView : cardViewList)
+                    cardView.setCardBackgroundColor(Color.parseColor("#D9CEBA"));
+
                 shoeActivity.setShoeDetailFragment(shoe);
+                holder.parent.setCardBackgroundColor(Color.parseColor("#FDC251"));
             });
         }
     }

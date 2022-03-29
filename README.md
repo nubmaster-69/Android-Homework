@@ -7,7 +7,7 @@
 
 > Landscape Mode
 
-![landscape](https://user-images.githubusercontent.com/78833363/160520227-21e4d0ee-ead7-43ae-a1bc-2b7dc9d51a2d.gif)
+![landscape](https://user-images.githubusercontent.com/78833363/160523628-72f845c9-589c-4cfc-aa31-b5ff2f767ad8.gif)
 
 
 > ## Lab 5
