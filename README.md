@@ -1,5 +1,15 @@
 # Screenshots
 
+> ## Lab 6
+> Portrait Mode
+ 
+![portrait](https://user-images.githubusercontent.com/78833363/160520297-6797176c-c24e-42d2-b8a7-acd8bba2bff9.gif)
+
+> Landscape Mode
+
+![landscape](https://user-images.githubusercontent.com/78833363/160520227-21e4d0ee-ead7-43ae-a1bc-2b7dc9d51a2d.gif)
+
+
 > ## Lab 5
 
 ![lab5_1](https://user-images.githubusercontent.com/78833363/158205457-511f5147-17a9-407d-926c-70855de7cb13.png)
