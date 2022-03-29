@@ -29,10 +29,12 @@ public class ShoeAdapter extends RecyclerView.Adapter<ShoeAdapter.ShoeViewHolder
 
     private List<Shoe> shoes;
     private Context context;
+    private ShoeActivity shoeActivity;
 
     public ShoeAdapter(List<Shoe> shoes, Context context) {
         this.shoes = shoes;
         this.context = context;
+        shoeActivity = (ShoeActivity) context;
     }
 
     @NonNull
@@ -58,10 +60,7 @@ public class ShoeAdapter extends RecyclerView.Adapter<ShoeAdapter.ShoeViewHolder
         int Orientation = context.getResources().getConfiguration().orientation;
         if (Orientation == Configuration.ORIENTATION_LANDSCAPE) {
             holder.parent.setOnClickListener(v -> {
-                Intent intent = new Intent(context, ShoeActivity.class);
-                intent.putExtra(ShoeDetailFragment.SHOE_DATA_KEY, shoe);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(intent);
+                shoeActivity.setShoeDetailFragment(shoe);
             });
         }
     }

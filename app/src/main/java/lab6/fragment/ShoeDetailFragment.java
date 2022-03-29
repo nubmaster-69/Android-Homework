@@ -50,8 +50,7 @@ public class ShoeDetailFragment extends Fragment {
         shoeImg.setImageResource(shoe.getImageResource());
         txtName.setText(shoe.getName());
         txtDesc.setText(shoe.getDesc());
-//        txtDesc.setText(new DecimalFormat("").format(shoe.get));
-        txtPrice.setText("$100");
+        txtPrice.setText("$" + new DecimalFormat("#.##").format(shoe.getPrice()));
 
         return view;
     }

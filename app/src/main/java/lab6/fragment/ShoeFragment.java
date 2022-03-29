@@ -13,12 +13,13 @@ import com.hisu.myapplication.R;
 
 import java.util.List;
 
+import lab6.ShoeActivity;
 import lab6.adapter.ShoeAdapter;
 import lab6.model.Shoe;
 
 public class ShoeFragment extends Fragment {
 
-    public RecyclerView mRecyclerView;
+    private RecyclerView mRecyclerView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
