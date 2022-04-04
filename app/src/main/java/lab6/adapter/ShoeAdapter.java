@@ -4,13 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Color;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -20,7 +18,6 @@ import com.hisu.myapplication.R;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.zip.Inflater;
 
 import lab6.ShoeActivity;
 import lab6.ShoeDetailActivity;
@@ -58,21 +55,20 @@ public class ShoeAdapter extends RecyclerView.Adapter<ShoeAdapter.ShoeViewHolder
         holder.txtName.setText(shoe.getBrand() + "-discount " + shoe.getDiscount() + "%");
 
         holder.parent.setOnClickListener(view -> {
-            Intent intent = new Intent(context, ShoeDetailActivity.class);
-            intent.putExtra(ShoeDetailFragment.SHOE_DATA_KEY, shoe);
-            context.startActivity(intent);
-        });
 
-        int Orientation = context.getResources().getConfiguration().orientation;
-        if (Orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            holder.parent.setOnClickListener(v -> {
+            int Orientation = context.getResources().getConfiguration().orientation;
+            if (Orientation == Configuration.ORIENTATION_LANDSCAPE) {
                 for (CardView cardView : cardViewList)
                     cardView.setCardBackgroundColor(Color.parseColor("#D9CEBA"));
 
                 shoeActivity.setShoeDetailFragment(shoe);
                 holder.parent.setCardBackgroundColor(Color.parseColor("#FDC251"));
-            });
-        }
+            } else {
+                Intent intent = new Intent(context, ShoeDetailActivity.class);
+                intent.putExtra(ShoeDetailFragment.SHOE_DATA_KEY, shoe);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
