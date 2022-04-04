@@ -1,5 +1,8 @@
 # Screenshots
 
+> ## Lab 7
+![lab_7](https://user-images.githubusercontent.com/78833363/161536661-078bee01-9c07-4ae9-8d6f-c25055d36313.gif)
+
 > ## Lab 6
 > Portrait Mode
  
