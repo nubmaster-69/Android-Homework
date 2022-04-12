@@ -1,4 +1,4 @@
-package lab7;
+package lab7.activity;
 
 import android.os.Bundle;
 import android.widget.Button;
@@ -14,19 +14,20 @@ import com.hisu.myapplication.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import lab7.adapter.UserAdapter;
-import lab7.database.MyDatabaseHelper;
+import lab7.adapter.RoomUserAdapter;
+import lab7.dao.UserDAO;
+import lab7.database.MyRoomDatabase;
 import lab7.model.User;
 
-public class SQLiteActivity extends AppCompatActivity {
+public class RoomActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private Button btnSave, btnCancel;
     private EditText edtInput;
     private List<User> userList;
-    private UserAdapter userAdapter;
+    private RoomUserAdapter userAdapter;
 
-    private MyDatabaseHelper myDatabaseHelper;
+    private UserDAO userDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,13 +35,12 @@ public class SQLiteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sqlite);
 
         initUI();
-
         addActionForSaveButton();
         addActionForCancelButton();
     }
 
     private void initUI() {
-        myDatabaseHelper = new MyDatabaseHelper(this);
+        userDAO = MyRoomDatabase.getInstance(this).userDao();
 
         recyclerView = findViewById(R.id.user_sql_recycler_view);
         btnSave = findViewById(R.id.btn_sql_save);
@@ -48,34 +48,30 @@ public class SQLiteActivity extends AppCompatActivity {
         edtInput = findViewById(R.id.edt_add);
 
         userList = new ArrayList<>();
-        userList = getDataFromDatabase();
+        userList = userDAO.getAllUsers();
 
-        userAdapter = new UserAdapter(userList, this);
+        userAdapter = new RoomUserAdapter(userList, this);
 
         recyclerView.setAdapter(userAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
-    private List<User> getDataFromDatabase() {
-        return myDatabaseHelper.getAllUsers();
-    }
-
     private void addActionForSaveButton() {
         btnSave.setOnClickListener(view -> {
-            int userId = userList.isEmpty() ? 1 : userList.get(userList.size() - 1).getId() + 1;
             String userFullName = edtInput.getText().toString().isEmpty() ?
-                    "Unknown 101" : edtInput.getText().toString();
+                    "No name 101" : edtInput.getText().toString();
 
-            User user = new User(userId, userFullName);
+            User user = new User(userFullName);
 
-            boolean inserted = myDatabaseHelper.insert(user);
+            boolean inserted = userDAO.addUser(user) > 0;
 
             if (inserted) {
-                Toast.makeText(SQLiteActivity.this, "User added successfully!", Toast.LENGTH_SHORT).show();
-                userList.add(user);
-                userAdapter.notifyDataSetChanged();
+                Toast.makeText(
+                        RoomActivity.this, "User added successfully!", Toast.LENGTH_SHORT).show();
+                userList = userDAO.getAllUsers();
+                userAdapter.setUserList(userList);
             } else {
-                Toast.makeText(SQLiteActivity.this, "failed...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RoomActivity.this, "failed...", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -89,7 +85,7 @@ public class SQLiteActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        myDatabaseHelper.close();
+        MyRoomDatabase.getInstance(this).closeDatabaseConnection();
         super.onDestroy();
     }
 }
