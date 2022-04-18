@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "446629997709",
+    "project_id": "demologinfb-253fe",
+    "storage_bucket": "demologinfb-253fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:446629997709:android:158d2a0e860d7ee3a046c4",
+        "android_client_info": {
+          "package_name": "com.hisu.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "446629997709-4dve9f0v7o0rk5iao3ssmm79qedpad7p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hisu.myapplication",
+            "certificate_hash": "e19b1c4a3e795628beb104d939a5b038da65cf2e"
+          }
+        },
+        {
+          "client_id": "446629997709-qod6luba2m94i4c9ijrkni6d0qcs1gum.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUMRChIFOlxNQi9EKPD54-WvSW-DIDhp4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "446629997709-qod6luba2m94i4c9ijrkni6d0qcs1gum.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

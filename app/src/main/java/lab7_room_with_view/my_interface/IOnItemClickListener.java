@@ -1,6 +1,6 @@
-package lab_7_room_with_view.my_interface;
+package lab7_room_with_view.my_interface;
 
-import lab_7_room_with_view.entity.Place;
+import lab7_room_with_view.entity.Place;
 
 public interface IOnItemClickListener {
     void updatePlace(Place place);

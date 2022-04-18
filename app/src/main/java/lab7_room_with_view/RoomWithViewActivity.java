@@ -1,4 +1,4 @@
-package lab_7_room_with_view;
+package lab7_room_with_view;
 
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -13,11 +13,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.hisu.myapplication.R;
 
-import lab_7_room_with_view.adapter.PlaceAdapter;
-import lab_7_room_with_view.database.PlaceDatabase;
-import lab_7_room_with_view.entity.Place;
-import lab_7_room_with_view.my_interface.IOnItemClickListener;
-import lab_7_room_with_view.view_model.PlaceViewModel;
+import lab7_room_with_view.adapter.PlaceAdapter;
+import lab7_room_with_view.database.PlaceDatabase;
+import lab7_room_with_view.entity.Place;
+import lab7_room_with_view.my_interface.IOnItemClickListener;
+import lab7_room_with_view.view_model.PlaceViewModel;
 
 public class RoomWithViewActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package lab_7_room_with_view.repository;
+package lab7_room_with_view.repository;
 
 import android.app.Application;
 
@@ -6,9 +6,9 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
-import lab_7_room_with_view.dao.PlaceDAO;
-import lab_7_room_with_view.database.PlaceDatabase;
-import lab_7_room_with_view.entity.Place;
+import lab7_room_with_view.dao.PlaceDAO;
+import lab7_room_with_view.database.PlaceDatabase;
+import lab7_room_with_view.entity.Place;
 
 public class PlaceRepository {
     private LiveData<List<Place>> liveData;

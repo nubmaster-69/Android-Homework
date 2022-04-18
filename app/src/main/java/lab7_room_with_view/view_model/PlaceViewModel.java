@@ -1,4 +1,4 @@
-package lab_7_room_with_view.view_model;
+package lab7_room_with_view.view_model;
 
 import android.app.Application;
 
@@ -7,8 +7,8 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
-import lab_7_room_with_view.entity.Place;
-import lab_7_room_with_view.repository.PlaceRepository;
+import lab7_room_with_view.entity.Place;
+import lab7_room_with_view.repository.PlaceRepository;
 
 public class PlaceViewModel extends AndroidViewModel {
 

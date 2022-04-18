@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.hisu.myapplication">
+        package="com.hisu.myapplication">
 
     <application
         android:allowBackup="true"
@@ -10,12 +10,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
+        <activity android:name="lab8.LoginSignUpActivity"></activity>
         <activity android:name="lab6.ShoeDetailActivity" />
         <activity
-            android:name="lab_7_room_with_view.RoomWithViewActivity"
+            android:name="lab8.FirebaseActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

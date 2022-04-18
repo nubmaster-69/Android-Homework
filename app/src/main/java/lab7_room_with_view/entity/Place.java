@@ -1,4 +1,4 @@
-package lab_7_room_with_view.entity;
+package lab7_room_with_view.entity;
 
 import androidx.room.Entity;
 import androidx.room.Ignore;

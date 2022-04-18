@@ -1,4 +1,4 @@
-package lab_7_room_with_view.adapter;
+package lab7_room_with_view.adapter;
 
 import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
@@ -14,8 +14,8 @@ import com.hisu.myapplication.R;
 
 import java.util.List;
 
-import lab_7_room_with_view.entity.Place;
-import lab_7_room_with_view.my_interface.IOnItemClickListener;
+import lab7_room_with_view.entity.Place;
+import lab7_room_with_view.my_interface.IOnItemClickListener;
 
 public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHolder> {
 

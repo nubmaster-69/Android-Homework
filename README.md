@@ -1,5 +1,16 @@
 # Screenshots
 
+> ## Lab 8
+> Firebase Data
+
+![data](https://user-images.githubusercontent.com/78833363/163836551-a709f7b3-1113-4dda-aadb-25d9d0d45904.PNG)
+
+> Login
+![login](https://user-images.githubusercontent.com/78833363/163836550-70cd02cd-927b-4e1f-8c7f-08499daeed92.gif)
+
+> Register
+![register](https://user-images.githubusercontent.com/78833363/163836543-967f950e-b833-456c-adb8-67fa1e7d8ba7.gif)
+
 > ## Lab 7
 ![lab_7](https://user-images.githubusercontent.com/78833363/161536661-078bee01-9c07-4ae9-8d6f-c25055d36313.gif)
 

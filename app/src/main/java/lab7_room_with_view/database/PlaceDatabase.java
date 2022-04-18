@@ -1,4 +1,4 @@
-package lab_7_room_with_view.database;
+package lab7_room_with_view.database;
 
 import android.content.Context;
 
@@ -11,8 +11,8 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import lab_7_room_with_view.dao.PlaceDAO;
-import lab_7_room_with_view.entity.Place;
+import lab7_room_with_view.dao.PlaceDAO;
+import lab7_room_with_view.entity.Place;
 
 @Database(entities = {Place.class}, version = 1, exportSchema = false)
 public abstract class PlaceDatabase extends RoomDatabase {

@@ -1,4 +1,4 @@
-package lab_7_room_with_view.dao;
+package lab7_room_with_view.dao;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
@@ -9,7 +9,7 @@ import androidx.room.Update;
 
 import java.util.List;
 
-import lab_7_room_with_view.entity.Place;
+import lab7_room_with_view.entity.Place;
 
 @Dao
 public interface PlaceDAO {
