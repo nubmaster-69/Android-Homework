@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 import java.util.List;
 
-import lab7.model.User;
+import lab7.entity.User;
 
 public class MyDatabaseHelper extends SQLiteOpenHelper {
 

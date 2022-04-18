@@ -1,7 +1,8 @@
-package lab7.model;
+package lab7.entity;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "users")
@@ -15,6 +16,7 @@ public class User {
     public User() {
     }
 
+    @Ignore
     public User(int id, String fullName) {
         this.id = id;
         this.fullName = fullName;

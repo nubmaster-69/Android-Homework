@@ -7,9 +7,9 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 import lab7.dao.UserDAO;
-import lab7.model.User;
+import lab7.entity.User;
 
-@Database(entities = {User.class}, version = 1)
+@Database(entities = {User.class}, version = 1, exportSchema = false)
 public abstract class MyRoomDatabase extends RoomDatabase {
     private static final String DB_NAME = "Room_User_DB";
     private static MyRoomDatabase instance;

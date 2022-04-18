@@ -16,7 +16,7 @@ import java.util.List;
 
 import lab7.adapter.UserAdapter;
 import lab7.database.MyDatabaseHelper;
-import lab7.model.User;
+import lab7.entity.User;
 
 public class SQLiteActivity extends AppCompatActivity {
 

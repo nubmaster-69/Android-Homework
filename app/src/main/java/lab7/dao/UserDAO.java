@@ -8,7 +8,7 @@ import androidx.room.Update;
 
 import java.util.List;
 
-import lab7.model.User;
+import lab7.entity.User;
 
 @Dao
 public interface UserDAO {

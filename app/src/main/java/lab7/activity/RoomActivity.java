@@ -17,7 +17,7 @@ import java.util.List;
 import lab7.adapter.RoomUserAdapter;
 import lab7.dao.UserDAO;
 import lab7.database.MyRoomDatabase;
-import lab7.model.User;
+import lab7.entity.User;
 
 public class RoomActivity extends AppCompatActivity {
 

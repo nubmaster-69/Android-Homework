@@ -17,7 +17,7 @@ import com.hisu.myapplication.R;
 import java.util.List;
 
 import lab7.database.MyDatabaseHelper;
-import lab7.model.User;
+import lab7.entity.User;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder> {
 

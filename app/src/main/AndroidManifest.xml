@@ -12,7 +12,7 @@
         android:theme="@style/Theme.MyApplication">
         <activity android:name="lab6.ShoeDetailActivity" />
         <activity
-            android:name="lab7.activity.RoomActivity"
+            android:name="lab_7_room_with_view.RoomWithViewActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
