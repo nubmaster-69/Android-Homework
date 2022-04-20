@@ -1,4 +1,4 @@
-package lab8;
+package lab8.fragment;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
@@ -13,14 +13,14 @@ import androidx.fragment.app.Fragment;
 
 import com.hisu.myapplication.R;
 
-import lab8.my_listener.IOnEmailAuthenListener;
+import lab8.my_listener.IOnEmailAuthenticationListener;
 
 public class SignInFragment extends Fragment {
     private EditText edtEmail, edtPwd;
     private ImageButton btnLogin;
-    private IOnEmailAuthenListener onEmailLoginListener;
+    private IOnEmailAuthenticationListener onEmailLoginListener;
 
-    public SignInFragment(IOnEmailAuthenListener onEmailLoginListener) {
+    public SignInFragment(IOnEmailAuthenticationListener onEmailLoginListener) {
         this.onEmailLoginListener = onEmailLoginListener;
     }
 
@@ -42,7 +42,7 @@ public class SignInFragment extends Fragment {
                 return;
             }
 
-            onEmailLoginListener.loginOrSignUpWithEmailAndPassword(email, pwd);
+            onEmailLoginListener.loginWithEmailAndPassword(email, pwd);
         });
 
 

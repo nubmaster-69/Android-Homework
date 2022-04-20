@@ -22,6 +22,7 @@ public class User {
         this.fullName = fullName;
     }
 
+    @Ignore
     public User(String fullName) {
         this.fullName = fullName;
     }

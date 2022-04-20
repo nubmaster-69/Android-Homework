@@ -3,22 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="lab8.FaceFragment">
+    tools:context="lab8.fragment.FaceFragment">
 
 
     <ImageView
-        android:id="@+id/imageView18"
+        android:id="@+id/face_happy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:src="@drawable/face_2"
-        app:layout_constraintEnd_toStartOf="@+id/imageView20"
+        app:layout_constraintEnd_toStartOf="@+id/face_unhappy"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView19" />
+        app:layout_constraintTop_toBottomOf="@+id/face_normal" />
 
     <ImageView
-        android:id="@+id/imageView19"
+        android:id="@+id/face_normal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -29,14 +29,14 @@
         app:layout_constraintTop_toBottomOf="@+id/textView26" />
 
     <ImageView
-        android:id="@+id/imageView20"
+        android:id="@+id/face_unhappy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/face_1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.946"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView19" />
+        app:layout_constraintTop_toBottomOf="@+id/face_normal" />
 
     <TextView
         android:id="@+id/textView26"
@@ -61,8 +61,8 @@
         android:layout_marginTop="180dp"
         android:background="@color/white"
         android:src="@drawable/btn_finish"
-        app:layout_constraintEnd_toEndOf="@+id/imageView20"
+        app:layout_constraintEnd_toEndOf="@+id/face_unhappy"
         app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="@+id/imageView18"
-        app:layout_constraintTop_toBottomOf="@+id/imageView19" />
+        app:layout_constraintStart_toStartOf="@+id/face_happy"
+        app:layout_constraintTop_toBottomOf="@+id/face_normal" />
 </androidx.constraintlayout.widget.ConstraintLayout>

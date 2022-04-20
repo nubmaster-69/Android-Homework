@@ -1,4 +1,4 @@
-package lab8;
+package lab8.fragment;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
@@ -14,16 +14,17 @@ import androidx.fragment.app.Fragment;
 
 import com.hisu.myapplication.R;
 
-import lab8.my_listener.IOnEmailAuthenListener;
+import lab8.entity.UserHappy;
+import lab8.my_listener.IOnFirebaseStoreChange;
 
 public class RegisterFragment extends Fragment {
 
-    private IOnEmailAuthenListener onEmailAuthenListener;
+    private IOnFirebaseStoreChange onFirebaseStoreChange;
     private ImageButton btnRegister;
     private EditText edtUsername, edtEmail, edtPwd, edtConfirmPwd;
 
-    public RegisterFragment(IOnEmailAuthenListener onEmailAuthenListener) {
-        this.onEmailAuthenListener = onEmailAuthenListener;
+    public RegisterFragment(IOnFirebaseStoreChange onFirebaseStoreChange) {
+        this.onFirebaseStoreChange = onFirebaseStoreChange;
     }
 
     @Override
@@ -39,32 +40,36 @@ public class RegisterFragment extends Fragment {
 
         btnRegister.setOnClickListener(view -> {
 
+            String user = edtUsername.getText().toString();
             String email = edtEmail.getText().toString();
             String pwd = edtPwd.getText().toString();
             String confirmPwd = edtConfirmPwd.getText().toString();
 
-            if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                showAlert("Invalid email!");
-                edtEmail.requestFocus();
-                return;
-            }
-
-            if (TextUtils.isEmpty(email) || TextUtils.isEmpty(pwd) || TextUtils.isEmpty(confirmPwd)) {
+            if (TextUtils.isEmpty(user) || TextUtils.isEmpty(email) || TextUtils.isEmpty(pwd) || TextUtils.isEmpty(confirmPwd)) {
                 showAlert("Please fill out all field!");
                 return;
             }
 
-            if(pwd.length() < 6) {
-                showAlert("Password must have more than 5 characters!");
+            if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                edtEmail.setError("Invalid email!");
+                edtEmail.requestFocus();
+                return;
+            }
+
+            if (pwd.length() < 6) {
+                edtPwd.setError("Password must have more than 5 characters!");
+                edtPwd.requestFocus();
                 return;
             }
 
             if (!TextUtils.equals(pwd, confirmPwd)) {
-                showAlert("Password not match!");
+                edtConfirmPwd.setError("Password not match!");
+                edtConfirmPwd.requestFocus();
                 return;
             }
 
-            onEmailAuthenListener.loginOrSignUpWithEmailAndPassword(email, pwd);
+            UserHappy userHappy = new UserHappy(user, email, pwd);
+            onFirebaseStoreChange.writeToFirestore(userHappy);
         });
 
 
