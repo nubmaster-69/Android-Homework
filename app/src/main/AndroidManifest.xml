@@ -13,8 +13,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name="lab8.LoginSignUpActivity"></activity>
-        <activity android:name="lab6.ShoeDetailActivity" />
         <activity
             android:name="lab8.FirebaseActivity"
             android:exported="true">
