@@ -26,25 +26,8 @@ public abstract class UserHappyDatabase extends RoomDatabase {
     public static UserHappyDatabase getInstance(Context context) {
         if (instance == null) {
             instance = Room.databaseBuilder(context, UserHappyDatabase.class, DB_NAME)
-                    .allowMainThreadQueries()
-                    .addCallback(initCallBack).build();
+                    .allowMainThreadQueries().build();
         }
         return instance;
     }
-
-    private static RoomDatabase.Callback initCallBack = new Callback() {
-        @Override
-        public void onCreate(@NonNull SupportSQLiteDatabase db) {
-            super.onCreate(db);
-            service.execute(() -> {
-                UserHappyDAO dao = instance.userHappyDAO();
-                if (dao.getUsers() == null)
-                    return;
-
-//              in order for this to work,
-//              have to create an account in firebase authentication and firebase fire-store as well
-                dao.insert(new UserHappy("Harry Nguyen", "harry123@gmail.com", "123456"));
-            });
-        }
-    };
 }
