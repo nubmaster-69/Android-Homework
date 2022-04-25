@@ -39,22 +39,25 @@ public class LoginSignUpActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
         userCollection = db.collection("User_happy");
-        dao = UserHappyDatabase
-                .getInstance(getApplicationContext())
-                .userHappyDAO();
+
+        UserHappyDatabase.service.execute(() -> {
+            dao = UserHappyDatabase
+                    .getInstance(getApplicationContext())
+                    .userHappyDAO();
+        });
 
         int mode = getIntent().getIntExtra(FirebaseActivity.MODE, 1);
 
         if (mode == 1)
             setFragment(new SignInFragment((email, password) ->
                     firebaseAuth.signInWithEmailAndPassword(email, password)
-                    .addOnCompleteListener(LoginSignUpActivity.this, task -> {
-                        if (task.isSuccessful()) {
-                            UserHappy userHappy = dao.getUserByEmail(email);
-                            setFragment(new FaceFragment(userHappy));
-                        } else
-                            showAlert("Incorrect email or password!");
-                    })));
+                            .addOnCompleteListener(LoginSignUpActivity.this, task -> {
+                                if (task.isSuccessful()) {
+                                    UserHappy userHappy = dao.getUserByEmail(email);
+                                    setFragment(new FaceFragment(userHappy));
+                                } else
+                                    showAlert("Incorrect email or password!");
+                            })));
         else
             setFragment(new RegisterFragment(user -> {
                 firebaseAuth.createUserWithEmailAndPassword(user.getEmail(), user.getPassword())
