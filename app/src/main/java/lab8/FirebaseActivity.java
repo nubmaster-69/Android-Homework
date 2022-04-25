@@ -28,17 +28,9 @@ public class FirebaseActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.fb_btn_login);
         btnRegister = findViewById(R.id.fb_btn_register);
 
+        getDataFromFireStore();
+
         Intent intent = new Intent(FirebaseActivity.this, LoginSignUpActivity.class);
-
-        UserHappyDAO dao = UserHappyDatabase.getInstance(this).userHappyDAO();
-        dao.deleteAll();
-
-        FirebaseFirestore fireStore = FirebaseFirestore.getInstance();
-        fireStore.collection("User_happy").get()
-                .addOnSuccessListener(queryDocumentSnapshots -> {
-                    for (QueryDocumentSnapshot queryDocumentSnapshot : queryDocumentSnapshots)
-                        dao.insert(queryDocumentSnapshot.toObject(UserHappy.class));
-                });
 
         btnLogin.setOnClickListener(view -> {
             intent.putExtra(MODE, 1);
@@ -48,6 +40,20 @@ public class FirebaseActivity extends AppCompatActivity {
         btnRegister.setOnClickListener(view -> {
             intent.putExtra(MODE, 2);
             startActivity(intent);
+        });
+    }
+
+    private void getDataFromFireStore() {
+        UserHappyDAO dao = UserHappyDatabase.getInstance(getApplicationContext()).userHappyDAO();
+        dao.deleteAll();
+
+        UserHappyDatabase.service.execute(() -> {
+            FirebaseFirestore fireStore = FirebaseFirestore.getInstance();
+            fireStore.collection("User_happy").get()
+                    .addOnSuccessListener(queryDocumentSnapshots -> {
+                        for (QueryDocumentSnapshot queryDocumentSnapshot : queryDocumentSnapshots)
+                            dao.insert(queryDocumentSnapshot.toObject(UserHappy.class));
+                    });
         });
     }
 }

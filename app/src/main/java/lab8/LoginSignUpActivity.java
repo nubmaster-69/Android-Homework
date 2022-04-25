@@ -40,11 +40,7 @@ public class LoginSignUpActivity extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
         userCollection = db.collection("User_happy");
 
-        UserHappyDatabase.service.execute(() -> {
-            dao = UserHappyDatabase
-                    .getInstance(getApplicationContext())
-                    .userHappyDAO();
-        });
+        dao = UserHappyDatabase.getInstance(getApplicationContext()).userHappyDAO();
 
         int mode = getIntent().getIntExtra(FirebaseActivity.MODE, 1);
 
